@@ -1,0 +1,52 @@
+CSECourseCode,Name,overallRating,difficultyRating, workLoadRating,MandatoryOrNot
+CSE 101,Computers: A General Introduction,overallRating, difficultyRating,workLoadRating,False
+CSE 111,Introduction to Quantitative Analysis and Reasoning with Computing,overallRating,difficultyRating,workLoadRating,False
+CSE 113,Introduction to Computer Programming I,overallRating, difficultyRating,workLoadRating,False
+CSE 114,Introduction to Computer Programming II,overallRating, difficultyRating,workLoadRating,False
+CSE 115,Introduction to Computer Science I,overallRating, difficultyRating,workLoadRating,True
+CSE 116,Introduction to Computer Science II,overallRating, difficultyRating,workLoadRating,True
+CSE 191,Introduction to Discrete Structures,overallRating, difficultyRating,workLoadRating,True
+CSE 199,UB Seminar,overallRating,difficultyRating,workLoadRating,True
+CSE 220,Systems Programming,overallRating,difficultyRating,workLoadRating,True
+CSE 241,Digital Systems,overallRating,difficultyRating,workLoadRating,False
+CSE 250,Data Structures,overallRating,difficultyRating,workLoadRating,True	
+CSE 305,Introduction to Programming Languages,overallRating,difficultyRating,workLoadRating,False	
+CSE 306,Software Quality in Practice,overallRating,difficultyRating,workLoadRating,False	
+CSE 312,Introduction to Web Applications,overallRating,difficultyRating,workLoadRating,False	
+CSE 321,Real -Time and Embedded Operating Systems,overallRating,difficultyRating,workLoadRating,False	
+CSE 331,Algorithms and Complexity,overallRating,difficultyRating,workLoadRating,True	
+CSE 341,Computer Organization,overallRating,difficultyRating,workLoadRating,True
+CSE 365,Introduction to Computer Security,overallRating,difficultyRating,workLoadRating,False 
+CSE 368,Introduction to Artificial Intelligence,overallRating,difficultyRating,workLoadRating,False	
+CSE 370,Applied Human Computer Interaction and Interface Design,overallRating,difficultyRating,workLoadRating,False	
+CSE 379,Introduction to Microprocessors,overallRating,difficultyRating,workLoadRating,False	
+CSE 396,Introduction to the Theory of Computation,overallRating,difficultyRating,workLoadRating,False	
+CSE 404,Software Project Management,overallRating,difficultyRating,workLoadRating,False	
+CSE 410,Special Topics,overallRating,difficultyRating,workLoadRating,False	
+CSE 411,Introduction to Computer Systems Administration,overallRating,difficultyRating,workLoadRating,False	
+CSE 421,Introduction to Operating Systems,overallRating,difficultyRating,workLoadRating,False	
+CSE 426,Blockchain Application Development,overallRating,difficultyRating,workLoadRating,False	
+CSE 427,Systems Security,overallRating,difficultyRating,workLoadRating,False	
+CSE 429,Algorithms for Modern Computing Systems,overallRating,difficultyRating,workLoadRating,False		
+CSE 431,Algorithms Analysis and Design,overallRating,difficultyRating,workLoadRating,False	
+CSE 435,Information Retrieval,overallRating,difficultyRating,workLoadRating,False	
+CSE 439,Quantum Computation through Linear Algebra,overallRating,difficultyRating,workLoadRating,False		
+CSE 442,Software Engineering,overallRating,difficultyRating,workLoadRating,False		
+CSE 446,Reinforcement Learning,overallRating,difficultyRating,workLoadRating,False	
+CSE 450,Hardware/Software Integrated Systems Design I,overallRating,difficultyRating,workLoadRating,False		
+CSE 455,Introduction to Pattern Recognition,overallRating,difficultyRating,workLoadRating,False	
+CSE 460,Data Models and Query Languages,overallRating,difficultyRating,workLoadRating,False		
+CSE 468,Robotics Algorithms,overallRating,difficultyRating,workLoadRating,False	
+CSE 469,Introduction to Data Mining,overallRating,difficultyRating,workLoadRating,False	
+CSE 473,Introduction to Computer Vision and Image Processing,overallRating,difficultyRating,workLoadRating,False	
+CSE 474,Introduction to Machine Learning,overallRating,difficultyRating,workLoadRating,False	
+CSE 487,Data Intensive Computing,overallRating,difficultyRating,workLoadRating,False	
+CSE 489,Modern Networking Concepts,overallRating,difficultyRating,workLoadRating,False	
+CSE 491,Introduction to the Theory of Computation,overallRating,difficultyRating,workLoadRating,False	
+CSE 492,Undergraduate Peer Mentoring,overallRating,difficultyRating,workLoadRating,False	
+CSE 493,Introduction to VLSI Electronics,overallRating,difficultyRating,workLoadRating,False		
+CSE 495,Supervised Teaching,overallRating,difficultyRating,workLoadRating,False	
+CSE 496,Internship/Practicum,overallRating,difficultyRating,workLoadRating,False	
+CSE 497,Departmental Honors Thesis or Project,overallRating,difficultyRating,workLoadRating,False	
+CSE 498,Undergraduate Research and Creative Activity,overallRating,difficultyRating,workLoadRating,False	
+CSE 499,Independent Study,overallRating,difficultyRating,workLoadRating,False	

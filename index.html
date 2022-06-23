@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rate My Courses</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="shortcut icon" type="image/png" href="/faviconn.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="ajax.js"></script>
+  <script src="code.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link href="//db.onlinewebfonts.com/c/0241ad69caef008726022256bf0af826?family=Freeland" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+
+
+<div class="jumbotron text-center" class="jumbrotron">
+  <h1 id="sitenom">Welcome to Rate My Courses.</h1>
+  <p id = "jumbotronkatext"></p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Learn more about a specific class and its reviews.</p>
+			<label for="coursename">Class Name:</label>
+		<select name="coursename" id="coursename">
+      <option value="CSE 101" id="CSE 101">CSE 101</option>
+      <option value="CSE 111">CSE 111</option>
+      <option value="CSE 113">CSE 113</option>
+      <option value="CSE 114">CSE 114</option>
+      <option value="CSE 115">CSE 115</option>
+      <option value="CSE 116">CSE 116</option>
+      <option value="CSE 191">CSE 191</option>
+      <option value="CSE 199">CSE 199</option>
+      <option value="CSE 220">CSE 220</option>
+      <option value="CSE 241">CSE 241</option>
+      <option value="CSE 250">CSE 250</option>
+      <option value="CSE 305">CSE 305</option>
+      <option value="CSE 306">CSE 306</option>
+      <option value="CSE 312">CSE 312</option>
+      <option value="CSE 321">CSE 321</option>
+      <option value="CSE 331">CSE 331</option>
+      <option value="CSE 341">CSE 341</option>
+      <option value="CSE 365">CSE 365</option>
+      <option value="CSE 368">CSE 368</option>
+      <option value="CSE 370">CSE 370</option>
+      <option value="CSE 379">CSE 379</option>
+      <option value="CSE 396">CSE 396</option>
+      <option value="CSE 404">CSE 404</option>
+      <option value="CSE 410">CSE 410</option>
+      <option value="CSE 411">CSE 411</option>
+      <option value="CSE 421">CSE 421</option>
+      <option value="CSE 426">CSE 426</option>
+      <option value="CSE 427">CSE 427</option>
+      <option value="CSE 429">CSE 429</option>
+      <option value="CSE 431">CSE 431</option>
+      <option value="CSE 435">CSE 435</option>
+      <option value="CSE 439">CSE 439</option>
+      <option value="CSE 442">CSE 442</option>
+      <option value="CSE 446">CSE 446</option>
+      <option value="CSE 450">CSE 450</option>
+      <option value="CSE 455">CSE 455</option>
+      <option value="CSE 460">CSE 460</option>
+      <option value="CSE 468">CSE 468</option>
+      <option value="CSE 469">CSE 469</option>
+      <option value="CSE 473">CSE 473</option>
+      <option value="CSE 474">CSE 474</option>
+      <option value="CSE 487">CSE 487</option>
+      <option value="CSE 489">CSE 489</option>
+      <option value="CSE 491">CSE 491</option>
+      <option value="CSE 492">CSE 492</option>
+      <option value="CSE 493">CSE 493</option>
+      <option value="CSE 495">CSE 495</option>
+      <option value="CSE 496">CSE 496</option>
+      <option value="CSE 497">CSE 497</option>
+      <option value="CSE 498">CSE 498</option>
+      <option value="CSE 499">CSE 499</option>
+		</select>
+			<script>
+				function showClassData() {
+					function myFunction() {
+            var x = document.getElementById("chosenclass");
+document.getElementById("helppickclass").style.display = "none"
+						document.getElementById("compareclasses").style.display = "none"
+					  if (x.style.display == "block") {
+					    x.style.display = "none";
+							x.style.display = "block";
+            } else {
+					    x.style.display = "block";
+					  }
+					}
+					myFunction()
+					
+					let courseElement = document.getElementById("coursename");
+				let namee = courseElement.options[courseElement.selectedIndex].value;
+				let elementy = document.getElementById("displayName")
+				elementy.innerHTML = "Class Name: "+ namee
+				document.getElementById("jumbotronkatext").innerHTML = ""
+				document.getElementById("sitenom").innerHTML = ""
+				document.getElementById("sitenom").innerHTML = namee				
+		document.getElementById("allactualreviewslisted	").innerHTML = ""
+				let jsonBlob = JSON.stringify(namee);
+			// 	ajaxPostRequest("/courseInPython",jsonBlob,line_graph);
+				}
+
+				function helpPickClass() {
+					function myFunction() {
+					  var x = document.getElementById("helppickclass");
+						document.getElementById("chosenclass").style.display = "none"
+						document.getElementById("compareclasses").style.display = "none"
+						document.getElementById("sitenom").innerHTML = "Get help picking the best class for you."
+					  if (x.style.display == "none") {
+					    x.style.display = "block";
+					  } else{
+					    x.style.display = "block";
+					  }
+					}
+					myFunction()
+				}
+
+				function compareClasses() {
+					function myFunction() {
+					  var x = document.getElementById("compareclasses");
+						document.getElementById("chosenclass").style.display = "none"
+						document.getElementById("helppickclass").style.display = "none"
+						document.getElementById("sitenom").innerHTML = "Pick your two classes below!"
+					  if (x.style.display == "block") {
+					    x.style.display = "none";
+					  } else {
+					    x.style.display = "block";
+					  }
+					}
+					myFunction()
+				}
+			</script>
+		<a class="btn btn-primary btn-lg" role="button" onclick="showClassData()">Look Up a Specific Class</a><br>
+<!-- 			<img src="/gaari.jpg" width="362px" height="200px">  -->
+    </div>
+    <div class="col-sm-4">
+      <p>Filter based on parameters like topics, difficulty, courseload, and requirements fulfilled.</p>
+			<a class="btn btn-primary btn-lg" role="button" onclick = "helpPickClass()">Help Me Choose the Right Class</a><br>
+<!-- 			<img src="/lib.jpeg" width="362px" height="200px"> -->
+    </div>
+    <div class="col-sm-4">
+      <p>Not sure which class is better? Choose two and decide based on factors that are most important to you.</p>
+			<a class="btn btn-primary btn-lg" role="button"  onclick = "compareClasses()">Compare Two Classes</a><br>
+<!-- 			<img src="/khana.jpeg" width="362px" height="200px"> -->
+    </div> 
+  </div>
+	<br>
+	<div id = "chosenclass" hidden>
+		<h3></h3>
+		<h3 id = "displayName"></h3>
+		<p>Overall Rating:</p>
+		<div id= "classrating"></div>
+		<p>Difficulty Rating:</p>
+		<div id = "diffrating"></div>
+		<script>
+		function displayReviews() {
+			var x = document.getElementById("allreviews");
+					if (x.style.display == "block") {
+						x.style.display = "none";
+					} else {
+						x.style.display = "block";
+					}
+				}
+		</script>
+		<div><button id = "buttono" onclick = "displayReviews()">See All Reviews</button></div>
+		<div id = "allreviews" hidden>
+			<div id="allactualreviewslisted">
+				All Reviews:
+				<br>
+			</div>	
+			<br>
+			<p id = "leavereview">Leave a Review: </p>
+			<label for="ubit">UBIT Name:</label>
+			<input type="text" id="ubit"></input>
+			<p>(note: your UBIT name will be verified, so only valid names will be allowed to add reviews)</p>
+			<label for="rating">Rating (whole number from 1-10): </label>
+			<input type="number" id="rating" min=0 max=10></input>
+			<br>
+			<label for="review">Review </label><br>
+			<textarea name="review" id ="review" cols="40" rows="10"></textarea>
+			<br>
+			<button id = "buttonoo" onclick="actuallysubmit()">Submit</button>
+		</div>
+				<br>
+<!-- 		<p>Top Professors:</p>
+		<div id = "displayprofdata"></div> -->
+	</div>
+
+
+	<div id = "helppickclass" hidden>
+		<h3>Help Me Pick a Class:</h3>
+		<br>
+		<label for = "filterbytopic">Filter By Keyword: </label>
+		<input type = "text" id = "filterbytopic"></input><br>
+		<label for="difficrating">Filter by Difficulty Level: </label>
+		<select name="difficrating" id="difficrating">
+      <option value="<1">Less than 1</option>
+			<option value="<2">Less than 2</option>
+			<option value="<3">Less than 3</option>
+			<option value="<4">Less than 4</option>
+			<option value="<5">Less than 5</option>
+			<option value="<6">Less than 7</option>
+			<option value="<7">Less than 7</option>
+			<option value="<8">Less than 8</option>
+			<option value="<9">Less than 9</option>
+			<option value="<10">Less than 10</option>
+		</select><br>
+		<label for = "loadrating">Filter By Courseload Rating:</label>
+		<select name="loadrating" id="loadrating">
+      <option value="<1">Less than 1</option>
+			<option value="<2">Less than 2</option>
+			<option value="<3">Less than 3</option>
+			<option value="<4">Less than 4</option>
+			<option value="<5">Less than 5</option>
+			<option value="<6">Less than 7</option>
+			<option value="<7">Less than 7</option>
+			<option value="<8">Less than 8</option>
+			<option value="<9">Less than 9</option>
+			<option value="<10">Less than 10</option>
+		</select><br>
+		<script>
+			function disappearance(){
+			var x = document.getElementById("displayrecommendedclasses");
+			if (x.style.display == "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+			document.getElementById("filterbytopic").value = ""
+				document.getElementById("difficrating").value = "<1"
+					document.getElementById("loadrating").value = "<1"
+				document.getElementById("true").checked = false
+				document.getElementById("false").checked = false
+}
+
+function disappearance2(){
+				var x = document.getElementById("displaycomparison");
+			if (x.style.display == "block") {
+				x.style.display = "none";
+				x.style.display = "block";
+			} else {
+				x.style.display = "block";
+			}
+		let courseElemento = document.getElementById("coursenamee");
+				let nameee = courseElemento.options[courseElemento.selectedIndex].value;
+	let courseElementy = document.getElementById("coursenamee2");
+				let nameeee = courseElementy.options[courseElementy.selectedIndex].value;
+document.getElementById("classo1").innerHTML = nameee + ": 4"
+	document.getElementById("classo2").innerHTML = nameeee + ":  5"
+	document.getElementById("coursenamee").value = "CSE 101"
+	document.getElementById("coursenamee2").value = "CSE 101"
+}
+		</script>
+		<p>Filter By Required:</p>
+		<input type="checkbox" id="true" name="true" value="true">
+		<label for="true">Required</label><br>
+				<input type="checkbox" id="false" name="false" value="false">
+		<label for="false">Not Required</label><br>
+		<button onclick = "disappearance()">See Recommended Classes</button><br>
+		<br>
+		<div id = "displayrecommendedclasses" hidden>
+			Top Classes:
+		</div>
+	</div>
+
+	<div id = "compareclasses" hidden>
+		<h3>Compare Two Classes:</h3>
+		<br>
+		<label for="coursenamee">Class 1:</label>
+			<select name="coursenamee" id="coursenamee">
+      <option value="CSE 101">CSE 101</option>
+      <option value="CSE 111">CSE 111</option>
+      <option value="CSE 113">CSE 113</option>
+      <option value="CSE 114">CSE 114</option>
+      <option value="CSE 115">CSE 115</option>
+      <option value="CSE 116">CSE 116</option>
+      <option value="CSE 191">CSE 191</option>
+      <option value="CSE 199">CSE 199</option>
+      <option value="CSE 220">CSE 220</option>
+      <option value="CSE 241">CSE 241</option>
+      <option value="CSE 250">CSE 250</option>
+      <option value="CSE 305">CSE 305</option>
+      <option value="CSE 306">CSE 306</option>
+      <option value="CSE 312">CSE 312</option>
+      <option value="CSE 321">CSE 321</option>
+      <option value="CSE 331">CSE 331</option>
+      <option value="CSE 341">CSE 341</option>
+      <option value="CSE 365">CSE 365</option>
+      <option value="CSE 368">CSE 368</option>
+      <option value="CSE 370">CSE 370</option>
+      <option value="CSE 379">CSE 379</option>
+      <option value="CSE 396">CSE 396</option>
+      <option value="CSE 404">CSE 404</option>
+      <option value="CSE 410">CSE 410</option>
+      <option value="CSE 411">CSE 411</option>
+      <option value="CSE 421">CSE 421</option>
+      <option value="CSE 426">CSE 426</option>
+      <option value="CSE 427">CSE 427</option>
+      <option value="CSE 429">CSE 429</option>
+      <option value="CSE 431">CSE 431</option>
+      <option value="CSE 435">CSE 435</option>
+      <option value="CSE 439">CSE 439</option>
+      <option value="CSE 442">CSE 442</option>
+      <option value="CSE 446">CSE 446</option>
+      <option value="CSE 450">CSE 450</option>
+      <option value="CSE 455">CSE 455</option>
+      <option value="CSE 460">CSE 460</option>
+      <option value="CSE 468">CSE 468</option>
+      <option value="CSE 469">CSE 469</option>
+      <option value="CSE 473">CSE 473</option>
+      <option value="CSE 474">CSE 474</option>
+      <option value="CSE 487">CSE 487</option>
+      <option value="CSE 489">CSE 489</option>
+      <option value="CSE 491">CSE 491</option>
+      <option value="CSE 492">CSE 492</option>
+      <option value="CSE 493">CSE 493</option>
+      <option value="CSE 495">CSE 495</option>
+      <option value="CSE 496">CSE 496</option>
+      <option value="CSE 497">CSE 497</option>
+      <option value="CSE 498">CSE 498</option>
+      <option value="CSE 499">CSE 499</option>
+		</select>
+	<label for="coursenamee2">Class 2:</label>
+			<select name="coursenamee2" id="coursenamee2">
+      <option value="CSE 101">CSE 101</option>
+      <option value="CSE 111">CSE 111</option>
+      <option value="CSE 113">CSE 113</option>
+      <option value="CSE 114">CSE 114</option>
+      <option value="CSE 115">CSE 115</option>
+      <option value="CSE 116">CSE 116</option>
+      <option value="CSE 191">CSE 191</option>
+      <option value="CSE 199">CSE 199</option>
+      <option value="CSE 220">CSE 220</option>
+      <option value="CSE 241">CSE 241</option>
+      <option value="CSE 250">CSE 250</option>
+      <option value="CSE 305">CSE 305</option>
+      <option value="CSE 306">CSE 306</option>
+      <option value="CSE 312">CSE 312</option>
+      <option value="CSE 321">CSE 321</option>
+      <option value="CSE 331">CSE 331</option>
+      <option value="CSE 341">CSE 341</option>
+      <option value="CSE 365">CSE 365</option>
+      <option value="CSE 368">CSE 368</option>
+      <option value="CSE 370">CSE 370</option>
+      <option value="CSE 379">CSE 379</option>
+      <option value="CSE 396">CSE 396</option>
+      <option value="CSE 404">CSE 404</option>
+      <option value="CSE 410">CSE 410</option>
+      <option value="CSE 411">CSE 411</option>
+      <option value="CSE 421">CSE 421</option>
+      <option value="CSE 426">CSE 426</option>
+      <option value="CSE 427">CSE 427</option>
+      <option value="CSE 429">CSE 429</option>
+      <option value="CSE 431">CSE 431</option>
+      <option value="CSE 435">CSE 435</option>
+      <option value="CSE 439">CSE 439</option>
+      <option value="CSE 442">CSE 442</option>
+      <option value="CSE 446">CSE 446</option>
+      <option value="CSE 450">CSE 450</option>
+      <option value="CSE 455">CSE 455</option>
+      <option value="CSE 460">CSE 460</option>
+      <option value="CSE 468">CSE 468</option>
+      <option value="CSE 469">CSE 469</option>
+      <option value="CSE 473">CSE 473</option>
+      <option value="CSE 474">CSE 474</option>
+      <option value="CSE 487">CSE 487</option>
+      <option value="CSE 489">CSE 489</option>
+      <option value="CSE 491">CSE 491</option>
+      <option value="CSE 492">CSE 492</option>
+      <option value="CSE 493">CSE 493</option>
+      <option value="CSE 495">CSE 495</option>
+      <option value="CSE 496">CSE 496</option>
+      <option value="CSE 497">CSE 497</option>
+      <option value="CSE 498">CSE 498</option>
+      <option value="CSE 499">CSE 499</option>
+		</select>
+		<a class="btn btn-primary btn-sm" role="button" onclick="disappearance2()">Compare Classes</a><br>
+		<br>
+		<div id = "displaycomparison" hidden>
+			<div id = "classo1"></div>
+			<div id = "classo2"></div>
+		</div>
+	</div>
+	
+</div>
+</body>
+
+
+</html>

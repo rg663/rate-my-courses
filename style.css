@@ -1,0 +1,52 @@
+html * {
+	font-family: 'Sofia Pro';
+}
+
+@font-face {
+	font-family: 'Sofia Pro';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Sofia Pro'), url('https://fonts.cdnfonts.com/s/14903/Sofia Pro Regular Az.woff') format('woff');
+}
+
+.jumbotron{
+	background-color: #B4E8D6;
+	color:  #056DE1;
+/*   background-image: url("bg.png"); */
+}
+
+#sitenom{
+	font-weight: 1200;
+}
+
+.btn{
+	background-color: white;
+  color: #592AA5;
+  border: 2px solid #592AA5; /* Green */
+	background-color: #;
+	font-size: 1.17em;
+	font-weight: bold;
+	height: 500%;
+	width: 100%;
+}
+
+.btn:hover{
+	background-color: #592AA5;
+}
+
+#box{
+	border: 1px solid black;
+	outline: 1px solid black;
+}
+
+#helppickclass, #chosenclass, #compareclasses{
+	border-style: solid;
+}
+
+#buttono{
+	width: "250px";
+}
+
+#leavereview{
+	font-weight: 
+}
